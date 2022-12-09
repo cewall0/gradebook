@@ -1,0 +1,147 @@
+<!-- html defaults to html5 -->
+<!DOCTYPE html>
+<html lang="en">
+    <!-- head is metadata about the document -->
+
+    <head>
+        <title>Class Assignment Calculator</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+
+        <script src="https://kit.fontawesome.com/ba6d9fad9f.js" crossorigin="anonymous"></script>
+        <!-- to interact with DOM via javascript, we've moved the script to the bottom -->
+        <!-- of the body -->
+    </head>
+
+    <!-- body is the viewport/contents of the page -->
+
+    <body>
+        <div id="titlePage" class="">
+            <div class="container">
+                <div class="left-wrap">
+                    <header>
+                        <h1>Gradebook</h1>
+                        <nav class="site-nav">
+                        <ul class="group">
+                            <li><a href="#">Home</a></li>
+                            <li class="addRecordLink"><a href="#addClass">Add Class</a></li>
+                        </ul>
+                        </nav>
+                    </header>
+                    <div class="content-area group">
+                        <div class="main-area left-wrap">
+                            <!-- <p>
+                            This form allows a class to be added where the assignments can be tracked
+                            </p> -->
+
+                            <form autocomplete="off">
+                                <h1 class="subtitle-h1" id="addClass">Add a Class</h1>
+                                <label class="hidden-label">Class to add</label>
+                                <input id="classNameInput" type="text" placeholder="My Class to Add" />
+                                <label class="hidden-label">Add Class Button</label>
+                                <input id="addClassButton" type="submit" value="Add Class" disabled />
+                            </form>
+                        </div>
+                    
+                <div class="right-wrap">
+                    <aside class="sidebar myClasses">
+                        <div>
+                            <h1 class="subtitle-h1">My Classes</h1>
+                        </div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Class name</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="classTableBody"></tbody>
+                        </table>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+            </div>
+        </div>
+
+        <!-- The following is for the assignment page -->
+
+        <div id="assignmentPage" class="remove-item">
+            <div class="container">
+                <header>
+                    <h1 id="classNameTitle" class="title">Default Title</h1>
+                    <nav class="site-nav">
+                        <ul class="group">
+                            <li><a href="#" onclick="showTitle()">Home</a></li>
+                            <li><a href="#assignmentForm">Add Record</a></li>
+                        </ul>
+                    </nav>
+                </header>
+                <div class="content-area group">
+                    <div class="left-wrap">
+                        <div class="records-area">
+                            <h1 class="subtitle-h1">Assignment Records</h1>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Assignment name</th>
+                                        <th>Points earned</th>
+                                        <th>Points possible</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tableBody"></tbody>
+                            </table>
+                            <h1 class="subtitle-h1">Add a Record</h1>
+
+                            <!-- Set input fields -->
+                            <form id="assignmentForm" autocomplete="off">
+                                <label class="hidden-label">Name of Assignment</label>
+                                <input id="nameInput" type="text" placeholder="Name of Assignment" />
+
+                                <label class="hidden-label">Points Earned</label>
+                                <input id="earnedInput" type="number" placeholder="Points Earned" />
+
+                                <label class="hidden-label">Points Possible</label>
+                                <input id="possibleInput" type="number" placeholder="Points Possible" />
+
+                                <button id="addButton" class="" disabled>Add Record</button>
+                                <button id="scrollToTopBtn" class="scrollToTopBtn">
+                                    <a id="#classNameTitle">Back to top</a>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="right-wrap">
+                        <aside class="sidebar" id="gradeBox">
+                            <div>
+                                <h1 class="gradebox-h1">Percentage</h1>
+                                <p id="percentage" class="gradebox">*</p>
+                            </div>
+                            <div>
+                                <h1 class="gradebox-h1">Letter Grade</h1>
+                                <p id="letterGrade" class="gradebox">*</p>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <footer>
+            <script
+                src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+                crossorigin="anonymous"
+            ></script>
+            <script src="script.js"></script>
+        </footer>
+    </body>
+</html>
